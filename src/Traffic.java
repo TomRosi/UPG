@@ -47,7 +47,7 @@ public class Traffic {
         computeModelDimensions(sim);
 
         draw();
-//        start();
+        start();
     }
 
     public void draw() {
@@ -144,5 +144,15 @@ public class Traffic {
         }
     }
 
+    public double getxOffSet() {
+        return this.xOffSet;
+    }
 
+    public double getyOffSet() {
+        return this.yOffSet;
+    }
+
+    public double getScale() {
+        return this.scale;
+    }
 }

@@ -8,6 +8,7 @@ import java.awt.geom.AffineTransform;
 
 public class DrawingPanel extends JPanel {
     public Graphics2D g;
+    Traffic traffic;
 
     public void paintComponent(Graphics g) {
         this.g = (Graphics2D) g;
@@ -34,10 +35,10 @@ public class DrawingPanel extends JPanel {
     }
 
     private int d2wx(double dx) {
-        return (int)(dx * scale + xOffSet);
+        return (int)(dx * traffic.getScale() + traffic.getxOffSet());
     }
 
     private int d2wy(double dy) {
-        return (int)(dy * scale + yOffSet);
+        return (int)(dy * traffic.getScale() + traffic.getyOffSet());
     }
 }
