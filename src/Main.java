@@ -34,9 +34,9 @@ public class Main extends JFrame {
 //        RoadSegment roads = new RoadSegment();
 //        Graphics2D g = new Graphics2D();
 
-//        for (String scenario : scenare) {
-//            System.out.println(scenario);
-//        }
+        for (String scenario : scenare) {
+            System.out.println(scenario);
+        }
         sim.runScenario(scenar.getId());
         computeModelDimensions(sim);
 
@@ -58,6 +58,7 @@ public class Main extends JFrame {
         frame.setVisible(true);
 
         Traffic traffic = new Traffic(panel, sim);
+        traffic.draw();
     }
 
     public static void computeModelDimensions(Simulator sim) {

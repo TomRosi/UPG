@@ -46,19 +46,21 @@ public class Traffic {
 
         computeModelDimensions(sim);
 
-        draw();
-        start();
+       draw();
+       // start();
+       // update();
+       // stop();
     }
 
     public void draw() {
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, panel.getWidth(), panel.getHeight());
 
-        for (Car car : cars)
-            panel.drawCar(car);
+//        for (Car car : cars)
+//            panel.drawCar(car);
 
-        for (CrossRoad cR : crossRoads)
-            panel.drawCrossRoad(cR);
+//        for (CrossRoad cR : crossRoads)
+//            panel.drawCrossRoad(cR);
 
         for (RoadSegment rS : roadSegments)
             panel.drawRoadSegment(rS);
