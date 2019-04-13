@@ -64,9 +64,10 @@ class VlastniScenar extends TrafficSim.Scenarios.Scenario {
 		simulator.addCrossRoadConnection(krizovatka, Direction.Right, -1, Direction.Right, 1); // napojeni z vedlejsi na hlavni vpravo
 		simulator.addCrossRoadConnection(krizovatka, Direction.Opposite, -1, Direction.Opposite, -1); // primy smer (v opacnem smeru)
 
-		// Pridani semaforu pro rizeni napojeni vedljesi-hlavni 
-		simulator.addCrossRoadTrafficLight(krizovatka, Direction.Entry, Direction.Opposite, new TimeTable(30,2,2).addInterval(2, 15)); // semafor na hlavni silnici rovne
-		simulator.addCrossRoadTrafficLight(krizovatka, Direction.Right, Direction.Right, new TimeTable(30,2,2).addInterval(17, 30)); // semafor na vedlejsi vpravo (jinam to ani nejde)
+		// Nastaveni semaforu pro rizeni napojeni vedljesi-hlavni
+		simulator.setCrossRoadTraffficLightParameters(krizovatka, 30, 2, 2);
+		simulator.setCrossRoadTrafficLight(krizovatka, Direction.Entry, Direction.Opposite, 2, 15); // semafor na hlavni silnici rovne
+		simulator.setCrossRoadTrafficLight(krizovatka, Direction.Right, Direction.Right, 17, 30); // semafor na vedlejsi vpravo (jinam to ani nejde)
 
 		// Pridani aut
 		for(int i=0; i<10; i++)

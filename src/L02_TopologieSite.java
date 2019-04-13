@@ -20,7 +20,7 @@ public class L02_TopologieSite {
 			System.out.println(scenarios[i]);
 		}
 
-		sim.runScenario(scenarios[0]);
+		sim.runScenario("Zakladni scenar");
 		
 		// Silnice
 		// =======
@@ -76,13 +76,14 @@ public class L02_TopologieSite {
 			System.out.println("\t\tdo smeru: "+Direction.values()[i]+" stav: " + lights[i].getCurrentState());
 		}
 		
-		System.out.println("\t\trozvrh semaforu (po sekundach): " +Direction.Entry + "->" + Direction.Left);
-		TrafficLightState[] states = lights[Direction.Left.ordinal()].getTimeTable();
-		System.out.print("\t\t\t");
-		for(int i=0; i<states.length; i++) {
-			System.out.print(" "+ states[i]);
-		}
-		
+		if (lights[Direction.Left.ordinal()] != null) {		
+			System.out.println("\t\trozvrh semaforu (po sekundach): " +Direction.Entry + "->" + Direction.Left);
+			TrafficLightState[] states = lights[Direction.Left.ordinal()].getTimeTable();
+			System.out.print("\t\t\t");
+			for(int i=0; i<states.length; i++) {
+				System.out.print(" "+ states[i]);
+			}
+		}		
 	}
 
 }
